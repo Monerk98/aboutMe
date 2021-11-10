@@ -3,15 +3,28 @@
     margin: 0;
     box-sizing: border-box;
 }
-
+:root {
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    --animation-duration: 250ms;
+  }
 body {
     background-color: #f5f7fa;
     padding: 40px 20px;
     font-family: Montserrat;
 }
-
+img
+{
+    display: block;
+}
+.link
+{
+   list-style: none;
+   text-decoration: none; 
+}
+/* =============== main container  ============ */
 .wrapper {
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: rgb(191, 191, 252);
     display: flex;
     max-width: 1200px;
     margin: 0 auto;
@@ -25,15 +38,54 @@ body {
     padding-bottom: 40px;
 }
 
+.imgContainer
+{
+    text-align: center;
+    position: relative;
+}
+.back
+{
+    position: absolute;
+    top: 0;
+    left: 30px;
+    margin: auto;
+    width: 290px;
+    height: 285px;
+    border-radius: 50%;
+    background-color: orange;
+}
 .my-photo {
-    width: 370px;
-    object-fit: cover;
+    margin: 0 auto;
+    /* width: 300px;
+    height:343px; */
+    width: 300px;
+    clip-path: circle();
+   
 }
 
 .about-me-container {
     padding: 110px 90px;
 }
+/* =============== main container  ============ */
 
+/*=================== Contacts container start  ================ */
+.imgWrap
+{
+    width: 30px;
+    height: 30px;
+    background-color: rgb(62, 62, 73);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.svgContainer
+{
+    width: 19px;
+    height: 19px;
+    fill: white;
+    /* padding-top: 5px; */
+}
 .contacts-container {
     margin: 60px 40px;
 }
@@ -51,16 +103,24 @@ body {
     font-size: 14px;
     font-weight: 400;
     color: #7c828b;
+    margin-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.contact-link:hover {
+    color: orange;
 }
 
 .contact-link-title {
+    display: flex;
     font-size: 14px;
     font-weight: 700;
     line-height: 24px;
     color: #ffffff;
-    margin-right: 10px; 
+    margin-bottom: 10px; 
 }
-
+/*=================== Contacts container end  ================ */
+/*=================== Tech Skills start  ================ */
 .tech-skills-title {
     font-size: 22px;
     font-weight: 700;
@@ -77,7 +137,7 @@ body {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
-    color:#ff6b08;
+    color:orange;
     margin-left: 15px;
 }
 
@@ -88,7 +148,9 @@ body {
 .tech-skills-text {
     color: #d6d8db;
 }
+/*=================== Tech Skillsr end  ================ */
 
+/* ================== Soft Skills start ================ */
 .soft-skills-container {
     margin-top: 55px;
     margin-left: 40px;
@@ -103,7 +165,7 @@ body {
 }
 
 .soft-skills-item {
-    color: #ff6b08;
+    color: orange;
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
@@ -113,7 +175,9 @@ body {
 .soft-skills-text {
     color: #d6d8db;
 }
+/* ================== Soft Skills end ================ */
 
+/* ================= Projets container start =============== */
 .info-container {
     margin-bottom: 65px;
 }
@@ -147,38 +211,95 @@ body {
     font-size: 22px;
     font-weight: 700;
     line-height: 24px;
-    margin-bottom: 16px; 
+    /* margin-bottom: 16px; */
+    color: #578cdb; 
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 7px;
+    width: 400px;
 }
 
-.projects_items {
-    margin-left: 17px;
+.projects__items {
+    /* padding-left: 17px; */
     font-weight: 700;
     text-align: left;
+    margin-bottom: 15px;
     
 }
 
-.projects-link {
-    color: #595959;
+.projects__link {
+    color: #ffffff;
+    text-decoration: none;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 24px; 
+    transition-delay: 250ms;
 }
-
+.projects__link :hover
+{
+    color: orange;
+}
+.project__SVG
+{
+    padding-top: 5px;
+    width: 16px;
+    height: 16px;
+    fill: orange;
+}
+.web
+{
+    display: inline-block;
+    margin: auto;
+}
+.project__responsive
+{
+    margin-left: 200px;
+    display: inline-block;
+    margin-top: 10px;
+    color: #578cdb; 
+}
 .tech-name {
-    color: #595959;
-    font-weight: 400;
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .dots {
-    color: #595959;
+    color: #ffffff;
     font-weight: 100;
 }
+.containerProject
+{
+    display: flex;
+    margin-bottom: 10px;
+}
+.wrapSVG
+{
+    width: 45px;
+    height: 45px;
+    background-color: rgb(162 162 243);
+    border-radius: 50%;
+    padding: 5px 13px;
+    display: flex;
+    align-items: center;
+}
+
+.projectSVG
+{
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    fill: white;
+}
+/* ================= Projets container end =============== */
+
+/* ================= company 1 ================= */
 .upper
 {
     margin-bottom: 15px;
 }
 
 .professional-title {
+    color: white;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
@@ -186,14 +307,13 @@ body {
 }
 
 .professional-company a {
-    color:#ff6b08;
+    color:orange;
     list-style: none;
     text-decoration: none;
 }
 
-
 .professional-time {
-    color: #a8a8a8;
+    color: #878787;
     font-size: 12px;
     font-weight: 400;
     line-height: 24px;
@@ -215,16 +335,18 @@ body {
     line-height: 24px;
     margin-left: 15px;
 }
-
+/* ================= company 1 ================= */
 .education-title {
-    color: #ff6b08;
+    color: white;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
-    margin-bottom: 15px;
+    margin-bottom: 1px;
 }
 
 .education-specialty {
+    /* margin-left: 100px; */
+    color: #578cdb;
     font-size: 14px;
     font-weight: 700;
     line-height: 24px;
@@ -232,6 +354,133 @@ body {
 }
 
 .education-specialty__strong {
-  color: #595959;
+  color: #878787;
   font-weight: 500;
 }
+
+/* Diploma */
+.lightContainer
+{
+    z-index: 1000;
+    width: 572px;
+}
+.gallery {
+    display: flex;
+    justify-content: center;
+    width: 572px;
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .gallery__item {
+    width: 240px;
+    position: relative;
+    box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+  }
+  .gallery__item:last-child
+  {
+    margin-left: 10px;
+  }
+  .gallery__image:hover {
+    transform: scale(1.03);
+  }
+  
+  .gallery__image {
+    width: 240px;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--animation-duration) var(--timing-function);
+  }
+  
+  .gallery__link {
+    display: block;
+    text-decoration: none;
+    width: 240px;
+  }
+  
+  .gallery__link:hover {
+    cursor: zoom-in;
+  }
+  
+  /* Lightbox */
+  .lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--animation-duration) var(--timing-function);
+  }
+  
+  .lightbox.is-open {
+    opacity: 1;
+    pointer-events: initial;
+  }
+  
+  .lightbox__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .lightbox__content {
+    transform: scale(0.95);
+    transition: transform var(--animation-duration) var(--timing-function);
+  }
+  
+  .lightbox.is-open .lightbox__content {
+    transform: scale(1);
+  }
+  
+  .lightbox__image {
+    display: block;
+    width: auto;
+    height: auto;
+    max-height: 100vh;
+    max-width: 100vw;
+  }
+  
+  .lightbox__button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color var(--animation-duration) var(--timing-function);
+    outline: none;
+    /* background-image: url('../images/icon-close.svg'); */
+    background-position: center;
+    background-size: 60%;
+    background-repeat: no-repeat;
+  }
+  
+  .lightbox__button:hover,
+  .lightbox__button:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .video
+  {
+      margin-bottom: 15px;
+  }
